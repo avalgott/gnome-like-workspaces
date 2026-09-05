@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "avalgott.gnome-like-workspaces-toggle",
+  "name": "GNOME-like Workspaces Toggle",
+  "version": "1.1.0",
+  "author": "avalgott",
+  "license": "MIT",
+  "description": "Menu to switch between GNOME-like desktops and stock Omarchy workspaces",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "GNOME-like Workspaces Toggle",
+    "description": "Toggles between GNOME-like desktop switching and stock Omarchy workspaces",
+    "category": "Compositor",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
