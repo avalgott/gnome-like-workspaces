@@ -4,8 +4,14 @@
 
 GNOME-style desktop switching for [Omarchy](https://omarchy.org) (Hyprland):
 one bar button per **desktop**, and switching desktops moves **every monitor
-at once** — like GNOME's "Workspaces span displays". Each monitor keeps its own
-windows per desktop, and each bar shows the same focused desktop.
+at once**. Each monitor keeps its own windows per desktop, and each bar shows
+the same focused desktop.
+
+Hyprland normally switches workspaces independently on each monitor; this
+plugin makes them behave as one desktop set, like GNOME's "Workspaces span
+displays":
+
+![Demo: SUPER+2 / SUPER+3 / SUPER+4 move both monitors at once](demo.gif)
 
 It has three parts:
 
@@ -133,6 +139,12 @@ omarchy plugin enable omarchy.workspaces   # stock workspace buttons, if you wan
   drop the `require("hypr.desktops")` line — re-run install.sh to restore it.
 - The keybindings mirror Omarchy's workspace keys (`keycode = workspace + 9`),
   so if Omarchy changes its binding scheme this needs a matching update.
+
+## Tested
+
+- Omarchy 4.0.2 (Quattro) on Arch Linux, Hyprland 0.56
+- Two monitors on an AMD Ryzen 9 + NVIDIA RTX 5080 laptop (the setup in the demo)
+- Also installed and exercised on a second machine during development
 
 ## Development
 
