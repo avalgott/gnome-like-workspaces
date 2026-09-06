@@ -11,7 +11,7 @@ Hyprland normally switches workspaces independently on each monitor; this
 plugin makes them behave as one desktop set, like GNOME's "Workspaces span
 displays":
 
-![Demo: SUPER+2 / SUPER+3 / SUPER+4 move both monitors at once](demo.gif)
+![Demo: switching desktops moves both monitors at once](gnome-like-workspaces-demo.gif)
 
 It has three parts:
 
