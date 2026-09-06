@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "avalgott.gnome-like-workspaces",
   "name": "GNOME-like Workspaces",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "avalgott",
   "license": "MIT",
   "description": "Desktop-wide workspace buttons for GNOME-style multi-monitor desktop switching",

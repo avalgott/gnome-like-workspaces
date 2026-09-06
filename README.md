@@ -22,9 +22,15 @@ It has three parts:
 ## Install
 
 ```bash
-omarchy plugin add https://github.com/avalgott/gnome-like-workspaces.git --enable
+omarchy plugin add https://github.com/avalgott/gnome-like-workspaces.git --enable --yes
 bash ~/.config/omarchy/plugins/avalgott.gnome-like-workspaces/install.sh
 ```
+
+Placement is automatic — the desktop buttons take over the stock workspace
+buttons' spot in the left group, and the toggle button goes in the right
+group, left of the agents icon. `--yes` skips Omarchy's interactive
+"place in which bar section?" prompt (it asks about the workspaces widget,
+not the toggle), and `install.sh` enforces the final positions either way.
 
 `install.sh` auto-detects your monitor names, writes a settings file, loads
 the module from `hyprland.lua`, reloads Hyprland, swaps out the stock

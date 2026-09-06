@@ -293,11 +293,19 @@ if (( SHELL_UP )); then
   omarchy bar put "$TOGGLE_ID" --section right --after omarchy.tray >/dev/null 2>&1 || \
     omarchy bar put "$TOGGLE_ID" --section right >/dev/null 2>&1 || \
     echo "warning: could not place $TOGGLE_ID in the bar" >&2
+  # put only adds; it leaves a widget already on the bar wherever it is, so
+  # enforce the position with move (e.g. an earlier `plugin add` answer put
+  # the widget somewhere else).
+  omarchy bar move "$TOGGLE_ID" --section right --after omarchy.tray >/dev/null 2>&1 || \
+    omarchy bar move "$TOGGLE_ID" --section right >/dev/null 2>&1 || true
 
   if grep -qE '^[[:space:]]*false[[:space:]]*$' "$STATE_FILE" 2>/dev/null; then
     echo "$ID is toggled off; leaving the stock workspaces widget in place."
   else
+    # put only adds; move enforces the section (a `plugin add` placement
+    # answer, or anything else, may have left the widget elsewhere).
     omarchy bar put "$ID" --section left || true
+    omarchy bar move "$ID" --section left || true
 
     for _ in 1 2 3 4 5; do
       stale="$(omarchy plugin list --json | jq -r \
