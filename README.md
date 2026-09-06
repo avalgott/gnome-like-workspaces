@@ -159,6 +159,18 @@ omarchy plugin add . --enable --yes
 To list the plugin on the marketplace, submit the manifest entry via the
 plugin template at plugins.omarchy.org.
 
+## Support
+
+If GNOME-like Workspaces makes your Omarchy setup better, you can help support future fixes and improvements.
+
+<a href="https://buymeacoffee.com/avalgott">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+       height="50"
+       alt="Buy Me A Coffee">
+</a>
+
+Bug reports, suggestions, and contributions are always welcome.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
