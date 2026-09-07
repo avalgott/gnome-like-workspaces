@@ -263,6 +263,16 @@ if [[ -d "$SRC_DIR/toggle" ]]; then
     rm -rf -- "$TOGGLE_DIR"
     mkdir -p "$TOGGLE_DIR"
     cp -r "$SRC_DIR/toggle/." "$TOGGLE_DIR/"
+    # The repo ships the toggle manifest as manifest.json.in (the marketplace
+    # rule is one plugin manifest per repository, so the toggle dir must not
+    # carry a second manifest.json while it sits in the repo). Install it as
+    # the real thing here; the fallback covers pre-rename checkouts.
+    if [[ -f "$SRC_DIR/toggle/manifest.json.in" ]]; then
+      cp "$SRC_DIR/toggle/manifest.json.in" "$TOGGLE_DIR/manifest.json"
+    elif [[ -f "$SRC_DIR/toggle/manifest.json" ]]; then
+      cp "$SRC_DIR/toggle/manifest.json" "$TOGGLE_DIR/manifest.json"
+    fi
+    rm -f "$TOGGLE_DIR/manifest.json.in"
     chmod +x "$TOGGLE_DIR/toggle.sh"
     if omarchy plugin validate "$TOGGLE_DIR" >/dev/null 2>&1; then
       echo "Installed $TOGGLE_ID (toggle menu)."

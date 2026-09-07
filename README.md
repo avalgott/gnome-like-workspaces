@@ -149,7 +149,10 @@ omarchy plugin enable omarchy.workspaces   # stock workspace buttons, if you wan
 ## Development
 
 This repo's root is the plugin (`manifest.json`), which is what
-`omarchy plugin add` clones. Test locally with:
+`omarchy plugin add` clones. The toggle widget ships as
+`toggle/manifest.json.in` — install.sh writes it as `manifest.json` when it
+installs the toggle directory, so the repository itself carries exactly one
+plugin manifest (a marketplace requirement). Test locally with:
 
 ```bash
 omarchy plugin validate .
